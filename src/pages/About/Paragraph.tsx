@@ -102,7 +102,7 @@ const Paragraph: React.FC<PropsType> = ({ num }) => {
         </p>
       </motion.div>
       <motion.div
-        className="lg:absolute hidden bottom-10 left-1/2 transform -translate-x-1/2 text-primary text-xl"
+        className="absolute lg:hidden bottom-10 left-1/2 transform -translate-x-1/2 text-primary text-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: [0, 1, 0] }}
         transition={{
