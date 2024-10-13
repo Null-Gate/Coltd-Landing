@@ -3,6 +3,7 @@ import location from "../../assets/location.svg";
 import realtime from "../../assets/file.svg";
 import datareport from "../../assets/datareport.svg";
 import option from "../../assets/option.svg";
+import { Support } from "./Support";
 
 const Chest = () => {
   
@@ -74,7 +75,7 @@ const Chest = () => {
           })}
         </div>
       </div>
-      <div></div>
+      <Support/>
     </div>
   );
 };
