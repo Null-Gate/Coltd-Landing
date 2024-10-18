@@ -20,10 +20,10 @@ export const Support = () => {
           </>
         }
         examples={[
-          "Does your product work for SMBs?",
-          "Can I pause my membership without losing my data?",
-          "How does seat based pricing work?",
-          "What's the meaning of life?",
+          "How can `Kar Gate` benefit for me ?",
+          "How is the pricing works ?",
+          "How can it assure my safety ?",
+          "Why should I purchase the premium features ?",
         ]}
       />
     </div>

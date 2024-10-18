@@ -5,14 +5,13 @@ const Hero = () => {
   return (
     <div className="flex flex-col-reverse lg:flex-row justify-between w-full ">
       <div className=" w-full lg:w-2/5 flex flex-col items-start gap-10  ">
-        <div className="lg:text-[60px] text-[30px] font-bold main-color ">
-          NAVIGATING THE DIGITAL LANDINGSCAPE FOR SUCCESS.
+        <div className="lg:text-[60px] text-[30px] font-bold main-color uppercase ">
+          revolutionalizing the transportation filed.
         </div>
         <div className="text-base ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-          eaque doloribus quibusdam ullam fugit ipsa suscipit fuga eos commodi.
-          Adipisci modi hic vel perferendis blanditiis facere dolores natus,
-          minima mollitia?
+          <span className="text-primary">Kargate</span> is a groundbreaking app designed to transform the
+          transportation landscape by seamlessly integrating GPS technology, OBD
+          (On-Board Diagnostics) data, and a real-time insurance system.
         </div>
         <div className="classic-btn">
           EXPLORE MORE <BiRightArrow />

@@ -3,9 +3,11 @@ import { useScroll, motion, useTransform } from "framer-motion";
 
 interface PropsType {
   num: string;
+  para: string;
+  title: string;
 }
 
-const Paragraph: React.FC<PropsType> = ({ num }) => {
+const Paragraph: React.FC<PropsType> = ({ num ,para,title }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -31,74 +33,10 @@ const Paragraph: React.FC<PropsType> = ({ num }) => {
       </motion.div>
       <motion.div className="w-full flex flex-col lg:flex-row justify-center border-t-4 border-primary gap-5 py-5">
         <div className="w-full lg:w-[30%] text-lg font-bold">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          {title}
         </div>
-        <p className="w-full lg:w-[70%]">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam vitae
-          commodi quasi dolor fugiat iusto ipsam, quae dolores, inventore
-          tempore asperiores magnam impedit, odit nisi atque natus quod!
-          Nostrum, autem!Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Aperiam vitae commodi quasi dolor fugiat iusto ipsam, quae
-          dolores, inventore tempore asperiores magnam impedit, odit nisi atque
-          natus quod! Nostrum, autem!Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Aperiam vitae commodi quasi dolor fugiat iusto
-          ipsam, quae dolores, inventore tempore asperiores magnam impedit, odit
-          nisi atque natus quod! Nostrum, autem!Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Aperiam vitae commodi quasi dolor fugiat
-          iusto ipsam, quae dolores, inventore tempore asperiores magnam
-          impedit, odit nisi atque natus quod! Nostrum, autem!Lorem ipsum dolor
-          sit amet consectetur adipisicing elit. Aperiam vitae commodi quasi
-          dolor fugiat iusto ipsam, quae dolores, inventore tempore asperiores
-          magnam impedit, odit nisi atque natus quod! Nostrum, autem!Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Aperiam vitae commodi
-          quasi dolor fugiat iusto ipsam, quae dolores, inventore tempore
-          asperiores magnam impedit, odit nisi atque natus quod! Nostrum,
-          autem!Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-          vitae commodi quasi dolor fugiat iusto ipsam, quae dolores, inventore
-          tempore asperiores magnam impedit, odit nisi atque natus quod!
-          Nostrum, autem!Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Aperiam vitae commodi quasi dolor fugiat iusto ipsam, quae
-          dolores, inventore tempore asperiores magnam impedit, odit nisi atque
-          natus quod! Nostrum, autem!Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Aperiam vitae commodi quasi dolor fugiat iusto
-          ipsam, quae dolores, inventore tempore asperiores magnam impedit, odit
-          nisi atque natus quod! Nostrum, autem!Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Aperiam vitae commodi quasi dolor fugiat
-          iusto ipsam, quae dolores, inventore tempore asperiores magnam
-          impedit, odit nisi atque natus quod! Nostrum, autem!Lorem ipsum dolor
-          sit amet consectetur adipisicing elit. Aperiam vitae commodi quasi
-          dolor fugiat iusto ipsam, quae dolores, inventore tempore asperiores
-          magnam impedit, odit nisi atque natus quod! Nostrum, autem!Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Aperiam vitae commodi
-          quasi dolor fugiat iusto ipsam, quae dolores, inventore tempore
-          asperiores magnam impedit, odit nisi atque natus quod! Nostrum,
-          autem!Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-          vitae commodi quasi dolor fugiat iusto ipsam, quae dolores, inventore
-          tempore asperiores magnam impedit, odit nisi atque natus quod!
-          Nostrum, autem!Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Aperiam vitae commodi quasi dolor fugiat iusto ipsam, quae
-          dolores, inventore tempore asperiores magnam impedit, odit nisi atque
-          natus quod! Nostrum, autem!Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Aperiam vitae commodi quasi dolor fugiat iusto
-          ipsam, quae dolores, inventore tempore asperiores magnam impedit, odit
-          nisi atque natus quod! Nostrum, autem!Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Aperiam vitae commodi quasi dolor fugiat
-          iusto ipsam, quae dolores, inventore tempore asperiores magnam
-          impedit, odit nisi atque natus quod! Nostrum, autem!Lorem ipsum dolor
-          sit amet consectetur adipisicing elit. Aperiam vitae commodi quasi
-          dolor fugiat iusto ipsam, quae dolores, inventore tempore asperiores
-          magnam impedit, odit nisi atque natus quod! Nostrum, autem!Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Aperiam vitae commodi
-          quasi dolor fugiat iusto ipsam, quae dolores, inventore tempore
-          asperiores magnam impedit, odit nisi atque natus quod! Nostrum,
-          autem!Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-          vitae commodi quasi dolor fugiat iusto ipsam, quae dolores, inventore
-          tempore asperiores magnam impedit, odit nisi atque natus quod!
-          Nostrum, autem!Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Aperiam vitae commodi quasi dolor fugiat iusto ipsam, quae
-          dolores, inventore tempore asperiores magnam impedit, odit nisi atque
-          natus quod! Nostrum, autem!Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Aperiam vitae commodi quasi dolor fugiat iusto
+        <p className="w-full lg:w-[70%] leading-10 tracking-wide">
+          {para}
         </p>
       </motion.div>
       <motion.div
