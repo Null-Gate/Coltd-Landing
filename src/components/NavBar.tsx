@@ -8,6 +8,7 @@ const NavBar: React.FC = () => {
   const pages = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
+    { name: "Safety", path: "/safety" },
     { name: "Pricing", path: "/pricing" },
   ];
 
