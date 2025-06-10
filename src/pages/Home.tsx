@@ -1,7 +1,7 @@
 import { motion, useAnimation, useTransform, useScroll } from "framer-motion";
 import { useEffect } from "react";
 import Hero from "./Home/Hero";
-import logo from "../assets/KarGate.png";
+import logo from "../assets/KarGate.avif";
 import Chest from "./Home/Chest";
 import Body from "./Home/Body";
 

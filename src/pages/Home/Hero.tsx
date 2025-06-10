@@ -1,5 +1,5 @@
 import { BiRightArrow } from "react-icons/bi";
-import logo from "../../assets/KarGate.png";
+import logo from "../../assets/KarGate.avif";
 import { HeroWord } from "../../components/HeroWord";
 
 const Hero = () => {

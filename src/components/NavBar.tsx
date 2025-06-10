@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
-import navlogo from "../assets/nav.png";
+import navlogo from "../assets/nav.avif";
 
 const NavBar: React.FC = () => {
   const pages = [
