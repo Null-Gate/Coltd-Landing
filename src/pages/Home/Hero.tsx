@@ -1,17 +1,14 @@
-import { BiRightArrow } from "react-icons/bi";
-import logo from "../../assets/KarGate.avif";
-import { HeroWord } from "../../components/HeroWord";
+import AnimateButton from "../../lib/AnimateButton";
+import HeroDesign from "./HeroDesign";
 
 const Hero = () => {
-  const words = ["JOURNEYS", "ROADS", "HEARTS", "BUSINESS", "PEOPLES"];
   return (
-    <div className="flex flex-col-reverse lg:flex-row justify-between w-full ">
-      <div className=" w-full lg:w-3/5 flex flex-col items-start gap-10  ">
-        <div className="lg:text-[60px] text-[25px] font-bold main-color uppercase ">
-          Empowering Efficiency <br className="lg:hidden block" /> linking
-          <HeroWord words={words} /> <br className="hidden lg:block" /> Driving
-          innovation
-        </div>
+    <div className="flex flex-col lg:flex-row lg:justify-between w-full ">
+      <div className="w-full lg:w-3/5">
+        <HeroDesign />
+      </div>
+
+      <div className=" w-full lg:w-2/5 flex flex-col items-center gap-10  ">
         <div className="text-sm lg:text-base lg:w-8/12 ">
           At <span className="text-primary">Kargate</span> , we are transforming
           the transportation industry by providing a digital platform that
@@ -23,12 +20,9 @@ const Hero = () => {
           deliveries or ensuring your vehicle's health, Kargate is here to
           streamline your journey and help you grow.
         </div>
-        <div className="classic-btn">
-          EXPLORE MORE <BiRightArrow />
+        <div className="">
+          <AnimateButton text={"Explore more"} />
         </div>
-      </div>
-      <div className=" w-full lg:w-2/5 ">
-        <img className="w-16 h-16" src={logo} alt="" />
       </div>
     </div>
   );

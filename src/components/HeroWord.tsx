@@ -57,7 +57,7 @@ export const HeroWord = ({
           position: "absolute",
         }}
         className={cn(
-          "z-10 inline-block relative text-left text-primary  px-2",
+          "z-10 inline-block relative text-left text-red-100  px-2",
           className
         )}
         key={currentWord}

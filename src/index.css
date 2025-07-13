@@ -1,20 +1,25 @@
-@import url("more_css/idk.css");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Padauk:wght@400;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.main-font{
+.main-font {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
 }
-.classic-btn{
-  @apply cursor-pointer flex items-center justify-between px-5 py-2 bg-primary  text-white rounded
+.sub-font {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
-.main-color{
-  @apply text-zinc-700
+.classic-btn {
+  @apply cursor-pointer flex items-center justify-between px-5 py-2 bg-primary  text-white rounded;
 }
-.active{
-  @apply text-primary
+.main-color {
+  @apply text-zinc-700;
+}
+.active {
+  @apply text-primary;
 }

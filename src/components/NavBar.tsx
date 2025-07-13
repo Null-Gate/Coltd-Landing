@@ -1,99 +1,9 @@
-// import React, { useState } from "react";
-// import { NavLink, useLocation } from "react-router-dom";
-// import { motion, AnimatePresence } from "framer-motion";
-// import { FiMenu, FiX } from "react-icons/fi";
-// import navlogo from "../assets/nav.avif";
-
-// const NavBar: React.FC = () => {
-//   const pages = [
-//     { name: "Home", path: "/" },
-//     { name: "About Us", path: "/about" },
-//     { name: "Safety", path: "/safety" },
-//     { name: "Pricing", path: "/pricing" },
-//   ];
-
-//   const location = useLocation();
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const toggleMenu = () => {
-//     setIsOpen(!isOpen);
-//   };
-
-//   return (
-//     <div className="bg-white shadow-md">
-//       <div className="flex justify-between items-center p-4 container mx-auto">
-//         <img className="h-12" src={navlogo} alt="Nav Logo" />
-//         <div className="lg:hidden">
-//           <button onClick={toggleMenu} className="text-2xl focus:outline-none">
-//             {isOpen ? <FiX /> : <FiMenu />}
-//           </button>
-//         </div>
-//         <div className="hidden lg:flex items-center gap-10">
-//           <div className="flex flex-col lg:flex-row items-center gap-5 relative">
-//             {pages.map((el) => {
-//               const isActive = location.pathname === el.path;
-//               return (
-//                 <NavLink to={el.path} key={el.name} className="relative">
-//                   <p className="relative hover:cursor-pointer text-lg lg:text-base font-medium text-gray-700 hover:text-primary">
-//                     {el.name}
-//                   </p>
-//                   <motion.div
-//                     className="absolute -bottom-1 rounded left-0 right-0 h-1 bg-primary"
-//                     initial={{ opacity: 0, width: 0 }}
-//                     animate={isActive ? { opacity: 1, width: "100%" } : {}}
-//                     transition={{ duration: 0.3 }}
-//                   />
-//                 </NavLink>
-//               );
-//             })}
-//           </div>
-//           <div className="mt-4 lg:mt-0">
-//             <button className="classic-btn px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary-dark transition duration-300 ease-in-out">
-//               Hit me up something
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-//       <AnimatePresence>
-//         {isOpen && (
-//           <motion.div
-//             className="lg:hidden"
-//             initial={{ opacity: 0, y: -20 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             exit={{ opacity: 0, y: -20 }}
-//             transition={{ duration: 0.3 }}
-//           >
-//             <div className="flex flex-col items-start gap-4 p-4 bg-gray-100">
-//               {pages.map((el) => (
-//                 <NavLink
-//                   to={el.path}
-//                   key={el.name}
-//                   className="relative text-lg font-bold text-gray-700 hover:text-primary"
-//                   onClick={toggleMenu}
-//                 >
-//                   {el.name}
-//                 </NavLink>
-//               ))}
-//               <button className="classic-btn w-full px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary-dark transition duration-300 ease-in-out">
-//                 Hit me up something
-//               </button>
-//             </div>
-//           </motion.div>
-//         )}
-//       </AnimatePresence>
-//     </div>
-//   );
-// };
-
-// export default NavBar;
-
 import React, { useState, useCallback } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import navlogo from "../assets/nav.avif";
 
-// Memoize pages array outside component
 const pages = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
@@ -102,7 +12,7 @@ const pages = [
 ];
 
 const NavButton = () => (
-  <button className="classic-btn px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary-dark transition duration-300 ease-in-out">
+  <button className="w-full lg:w-auto px-5 py-2 rounded-xl bg-primary text-white font-semibold hover:bg-primary-dark transition">
     Hit me up something
   </button>
 );
@@ -112,14 +22,14 @@ const NavItem: React.FC<{ name: string; path: string; isActive: boolean }> = ({
   path,
   isActive,
 }) => (
-  <NavLink to={path} className="relative">
-    <p className="relative text-lg lg:text-base font-medium text-gray-700 hover:text-primary cursor-pointer">
+  <NavLink to={path} className="relative group">
+    <p className="text-lg font-medium text-gray-700 group-hover:text-primary transition">
       {name}
     </p>
     <motion.div
-      className="absolute -bottom-1 left-0 right-0 h-1 bg-primary rounded"
-      initial={{ opacity: 0, width: 0 }}
-      animate={isActive ? { opacity: 1, width: "100%" } : {}}
+      className="absolute left-0 right-0 h-[2px] bg-primary rounded bottom-0"
+      initial={{ width: 0 }}
+      animate={isActive ? { width: "100%" } : { width: 0 }}
       transition={{ duration: 0.3 }}
     />
   </NavLink>
@@ -131,62 +41,61 @@ const NavBar: React.FC = () => {
   const toggleMenu = useCallback(() => setIsOpen((prev) => !prev), []);
 
   return (
-    <header className="bg-white shadow-md">
-      <div className="flex justify-between items-center p-4 container mx-auto">
+    <header className="fixed w-full z-50 bg-white/70 backdrop-blur-md shadow-md">
+      <div className="flex items-center justify-between px-4 py-3 lg:px-8 container mx-auto">
         <img
-          className="h-12"
+          className="h-10 w-auto"
           src={navlogo}
-          alt="Kargate Navigation Logo"
+          alt="Kargate Logo"
           loading="lazy"
         />
 
-        {/* Mobile Menu Button */}
-        <div className="lg:hidden">
-          <button onClick={toggleMenu} className="text-2xl focus:outline-none">
-            {isOpen ? <FiX /> : <FiMenu />}
-          </button>
-        </div>
-
-        {/* Desktop Menu */}
+        {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-10">
-          <div className="flex items-center gap-5">
-            {pages.map(({ name, path }) => (
-              <NavItem
-                key={name}
-                name={name}
-                path={path}
-                isActive={location.pathname === path}
-              />
-            ))}
-          </div>
+          {pages.map(({ name, path }) => (
+            <NavItem
+              key={name}
+              name={name}
+              path={path}
+              isActive={location.pathname === path}
+            />
+          ))}
           <NavButton />
         </nav>
+
+        {/* Mobile Toggle */}
+        <button
+          className="lg:hidden text-2xl text-gray-700"
+          onClick={toggleMenu}
+        >
+          {isOpen ? <FiX /> : <FiMenu />}
+        </button>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.nav
-            className="lg:hidden"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+          <motion.div
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
             transition={{ duration: 0.3 }}
+            className="lg:hidden px-4 pt-2 pb-6  shadow-inner rounded-b-xl"
           >
-            <div className="flex flex-col items-start gap-4 p-4 bg-gray-100">
+            <div className="flex flex-col gap-4">
               {pages.map(({ name, path }) => (
                 <NavLink
                   key={name}
                   to={path}
-                  className="text-lg font-bold text-gray-700 hover:text-primary"
                   onClick={toggleMenu}
+                  className="text-base font-semibold text-gray-700 hover:text-primary"
                 >
                   {name}
                 </NavLink>
               ))}
               <NavButton />
             </div>
-          </motion.nav>
+          </motion.div>
         )}
       </AnimatePresence>
     </header>
@@ -194,4 +103,3 @@ const NavBar: React.FC = () => {
 };
 
 export default NavBar;
-

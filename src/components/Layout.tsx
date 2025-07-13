@@ -7,9 +7,9 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <div className=" main-font px-2 lg:px-10">
+    <div className=" main-font ">
       <NavBar />
-      {children}
+      <div className="mt-5 pt-5 lg:pt-16">{children}</div>
     </div>
   );
 };
