@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import image from "../../assets/vecteezy_red-wave-fluid-abstract-background-for-banner-web-vector_26609272-1.jpg";
+import image from "../../assets/vecteezy_red-wave-fluid-abstract-background-for-banner-web-vector_26609272-1.avif";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const AnimateCard = ({ data }: any) => {
   const [isAnimate, setIsAnimate] = useState(false);

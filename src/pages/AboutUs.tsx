@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Paragraph from "./About/Paragraph";
 import Footer from "./Footer";
 
@@ -20,12 +21,26 @@ const AboutUs = () => {
     },
   ];
   return (
+    <>
+    <Helmet>
+        <title>KarGate - Transport & Tracking Platform in Asia</title>
+        <meta name="description" content="KarGate is a transport platform offering real-time vehicle tracking, smart logistics, and driver-car matching in Asia." />
+        <link rel="canonical" href="https://kargate.site/" />
+        <meta property="og:title" content="KarGate - Smarter Transport in Asia" />
+        <meta property="og:description" content="Book and track transport smartly with KarGate." />
+        <meta property="og:url" content="https://kargate.site/" />
+        <meta property="og:type" content="website" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
+
     <div className="flex flex-col items-center py-10 ">
       {aboutData.map((el) => {
         return <Paragraph para={el.para} title={el.title} num={el.num} />;
       })}
       <Footer />
     </div>
+
+  </>
   );
 };
 

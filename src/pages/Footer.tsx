@@ -1,7 +1,20 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import logo from "../assets/im 2.jpg";
+import logo from "../assets/im 2.avif";
 const Footer = () => {
   return (
+    <>
+      <Helmet>
+        <title>KarGate - Transport & Tracking Platform in Asia</title>
+        <meta name="description" content="KarGate is a transport platform offering real-time vehicle tracking, smart logistics, and driver-car matching in Asia." />
+        <link rel="canonical" href="https://kargate.site/" />
+        <meta property="og:title" content="KarGate - Smarter Transport in Asia" />
+        <meta property="og:description" content="Book and track transport smartly with KarGate." />
+        <meta property="og:url" content="https://kargate.site/" />
+        <meta property="og:type" content="website" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
+
     <div className="w-full">
       <footer className="bg-primary rounded-md">
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -150,6 +163,7 @@ const Footer = () => {
         </div>
       </footer>
     </div>
+  </>
   );
 };
 

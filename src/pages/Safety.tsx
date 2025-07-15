@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, FC } from "react";
 
@@ -35,6 +36,18 @@ const Safety: FC = () => {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>KarGate - Transport & Tracking Platform in Asia</title>
+        <meta name="description" content="KarGate is a transport platform offering real-time vehicle tracking, smart logistics, and driver-car matching in Asia." />
+        <link rel="canonical" href="https://kargate.site/" />
+        <meta property="og:title" content="KarGate - Smarter Transport in Asia" />
+        <meta property="og:description" content="Book and track transport smartly with KarGate." />
+        <meta property="og:url" content="https://kargate.site/" />
+        <meta property="og:type" content="website" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
+
     <div className="lg:p-8 pt-16 lg:pt-10 pb-56 flex flex-col overflow-hidden items-center justify-center bg-gradient-to-b from-white to-[#f6f7f8]">
       {/* SWITCH BUTTON */}
       <div className="relative flex bg-white border border-gray-300 rounded-full overflow-hidden mb-8 shadow-sm">
@@ -171,6 +184,7 @@ const Safety: FC = () => {
         </AnimatePresence>
       </div>
     </div>
+  </>
   );
 };
 

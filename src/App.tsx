@@ -4,7 +4,7 @@ import RoutePath from "./routes/RoutePath";
 const App = () => {
   return (
     <Layout>
-      <RoutePath/>
+      <RoutePath />
     </Layout>
   );
 };
